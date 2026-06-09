@@ -189,3 +189,17 @@ After the first install, a `manifest.json` is created at `~/.nuke/tools/manifest
   }
 }
 ```
+
+<img width="1033" height="1093" alt="image" src="https://github.com/user-attachments/assets/89d87c45-7feb-4909-bd8d-1fe65718ccf8" />
+
+<img width="1032" height="1112" alt="image" src="https://github.com/user-attachments/assets/18696dc2-f6d1-4b16-bbd7-8c3a393e8917" />
+
+<img width="1026" height="1105" alt="image" src="https://github.com/user-attachments/assets/0255d2af-4137-4f34-9106-390bb930f7a8" />
+
+<img width="1029" height="1111" alt="image" src="https://github.com/user-attachments/assets/1bbec74a-69a1-4682-8d6e-3d9ac0867fd6" />
+
+<img width="1019" height="1105" alt="image" src="https://github.com/user-attachments/assets/b491373e-bd63-4397-8ecc-e2c70d066d8b" />
+
+<img width="1028" height="1082" alt="image" src="https://github.com/user-attachments/assets/8aceb352-f72e-4e4b-adf1-7e402a139a95" />
+
+<img width="1014" height="1120" alt="image" src="https://github.com/user-attachments/assets/6571af74-5860-4840-a608-5f36c83b3405" />
