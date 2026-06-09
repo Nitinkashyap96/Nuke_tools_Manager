@@ -1,5 +1,5 @@
 # Nuke Tools Manager
-## Full PySide2 / PySide6 Tool Manager for Nuke 13–16+
+## Full PySide2 / PySide6 Tool Manager for Nuke 13–17+
 
 ---
 
@@ -15,29 +15,58 @@
 
 ---
 
+    File / Folder,Purpose
+    pyside_compat.py,Auto-selects PySide2 or PySide6 based on Nuke version
+    zip_utils.py,"Zip, unzip, install, uninstall, manifest management"
+    tool_manager_ui.py,Full 4-tab GUI — run standalone OR from inside Nuke
+    init.py,Copy to ~/.nuke/ — auto-registers tools on Nuke startup
+    menu.py,"Copy to ~/.nuke/ — adds ""Tools Manager"" to Nuke's menubar"
+    launch_nk_tools.py,External launcher script to open the tools outside of Nuke
+    sound_utils.py,Handles audio feedback and sound effects for UI actions
+    README.md,Documentation and installation instructions
+    "icons/, logo/, icon_256.png","UI icons, tool graphics, and application visuals"
+    sounds/,Directory containing audio files used by the UI
+    setting_tip/,Directory containing tooltip data or settings-related assets
+
 ## Nuke Version → PySide
 
 | Nuke | Python | PySide |
 |---|---|---|
 | 13.x | 3.7 | PySide2 |
 | 14.x | 3.9 | PySide2 |
-| 15.x | 3.10 | PySide6 |
+| 15.x | 3.10 | PySide2 |
 | 16.x | 3.11 | PySide6 |
+| 17.x | 3.11 | PySide6 |
 
 ---
 
 ## Installation
 
-### Step 1 — Copy the tools folder
+### Step 1 — Copy the tools folder .nuke folder  paste  
+
+# init.py registered  &  nuke restart
+
+    nuke.pluginAddPath(r'./nuke_tools_manager')
+
+# Tools folder structure  
+
 
 ```
 ~/.nuke/
-├── init.py            ← copy from this package (or merge)
-├── menu.py            ← copy from this package (or merge)
+├── init.py                  ← copy from this package (or merge)
+├── menu.py                  ← copy from this package (or merge)
 └── tools/
+    ├── icons/
+    ├── logo/
+    ├── setting_tip/
+    ├── sounds/
+    ├── icon_256.png
+    ├── launch_nk_tools.py
     ├── pyside_compat.py
-    ├── zip_utils.py
-    └── tool_manager_ui.py
+    ├── README.md
+    ├── sound_utils.py
+    ├── tool_manager_ui.py
+    └── zip_utils.py
 ```
 
 ### Step 2 — Install PySide (if not already present)
@@ -55,6 +84,19 @@ Or using Nuke's bundled Python:
 ```bash
 # Find Nuke's Python path, e.g.:
 /Applications/Nuke15.0v1/Nuke15.0v1.app/Contents/MacOS/python -m pip install PySide6
+
+/usr/local/Nuke15.0v1/python -m pip install PySide6
+
+"C:\Program Files\Nuke15.0v1\python.exe" -m pip install PySide6
+
+
+macOS: /Users/<your_username>/.nuke
+
+Linux: /home/<your_username>/.nuke
+
+Windows: C:\Users\<your_username>\.nuke
+
+
 ```
 
 ### Step 3 — Launch
@@ -63,7 +105,7 @@ Or using Nuke's bundled Python:
 
 ```python
 import sys
-sys.path.insert(0, os.path.expanduser('~/.nuke/tools'))
+sys.path.insert(0, os.path.expanduser('~/.nuke/nuke_tools_manager'))
 import tool_manager_ui
 tool_manager_ui.show()
 ```
@@ -77,7 +119,7 @@ Nuke  →  Tools Manager  →  Open Tools Manager
 **Standalone (outside Nuke, for testing):**
 
 ```bash
-cd ~/.nuke/tools
+cd ~/.nuke/nuke_tools_manager
 python tool_manager_ui.py
 ```
 
