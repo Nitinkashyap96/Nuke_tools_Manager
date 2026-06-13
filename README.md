@@ -55,7 +55,7 @@
 ~/.nuke/
 ├── init.py                  ← copy from this package (or merge)
 ├── menu.py                  ← copy from this package (or merge)
-└── tools/
+└── nuke_tools_manager/
     ├── icons/
     ├── logo/
     ├── setting_tip/
